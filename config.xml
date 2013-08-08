@@ -13,7 +13,11 @@
         Hetu Infotech
     </author>
 	
-	<icon src="images/icon.jpg" gap:role="default" />	
+	<icon src="images/icon.jpg" gap:role="default" />
+	
+	<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+	<access origin="*" browserOnly="true" />
+	
 	<preference name="phonegap-version" value="2.9.0" />
 	<preference name="stay-in-webview" value="false" />
 	<preference name="detect-data-types" value="true" />
