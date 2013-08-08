@@ -14,5 +14,4 @@
     </author>
 	
 	<icon src="images/icon.jpg" gap:role="default" />	
-	<preference name="orientation" value="portrait" />
 </widget>
