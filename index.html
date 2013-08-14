@@ -12,6 +12,11 @@
         <script src="js/members.js" type="text/javascript"></script>
         <script src="js/phonegap.js" type="text/javascript"></script>
         <script src="js/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+        <style>
+			body {
+				font-size:14px;
+			}		
+		</style>
     </head> 
     <body>
         <div data-role="page" id="page">
@@ -23,7 +28,7 @@
                 <ul id="membersList" data-role="listview" data-autodividers="true" data-filter="true" data-inset="true"></ul>		
             </div>
             <div data-role="footer" data-position="fixed">
-	            <h4>Page Footer</h4>
+	            <h4>&copy; HETU</h4>
             </div>
         </div>
 		<script type="text/javascript">
@@ -45,21 +50,27 @@
                                 '<a href="#hetuInfo" data-icon="info" class="ui-btn-right" data-rel="dialog" data-transition="flip" data-theme="d">Info</a>'+
                             '</div>'+
                             '<div data-role="content">'+
-                                '<div class="ui-grid-b">'+
-                                    '<div class="ui-block-a"><img src="./images/thumbs/'+item.firstName+'_'+item.lastName+'.jpg" width="90%"></div>'+
-                                    '<div class="ui-block-b">'+
-                                        '<h2>'+item.company+'</h2>'+
-                                        '<p>'+item.category+'</p>'+
-                                        '<p>'+item.website+'</p>'+
+                                '<div style="height:110px;">'+
+                                    '<div>'+
+										'<img src="./images/thumbs/'+item.firstName+'_'+item.lastName+'.jpg" style="width:100px; height:100px; padding-bottom:10px; padding-right:10px; float:left;"><br>'+
+										'<b style="font-size:18px;">'+item.company+'</b>'+
+										'<br>'+item.category+'<br><br>'+
                                     '</div>'+
                                 '</div>'+
-                                '<p><strong>About Us</strong><br>'+item.usp+'</p><br>'+
-                                '<ul data-role="listview" data-theme="c">'+
-                                    '<li onclick="window.open(\'tel:'+item.cellPhone+'\');"><strong>SMS :</strong>'+item.cellPhone+'</li>'+
-                                    '<li onclick="window.open(\'sms:'+item.cellPhone+'?body=Hey Buddy, how are doing today\');"><strong>SMS : </strong>'+item.cellPhone+'</li>'+
-                                    '<li onclick="window.open(\'mailto:'+item.email+'?body=Hey Buddy, how are doing today?\');"><strong>Email : </strong>'+item.email+'</li>'+
-                                '</ul>'+
-                                '<hr><p><strong>Address</strong><br>'+item.address+'</p>'+
+								'<div>'+
+									'<ul data-role="listview" data-inset="true" data-divider-theme="b">'+
+										'<li data-role="list-divider">Call</li>'+
+										'<li data-theme="c" onclick="window.open(\'tel:'+item.cellPhone+'\');">'+item.cellPhone+'</li>'+
+										'<li data-role="list-divider">SMS</li>'+
+										'<li data-theme="c" onclick="window.open(\'sms:'+item.cellPhone+'?body=Hey Buddy, how are doing today\');">'+item.cellPhone+'</li>'+
+										'<li data-role="list-divider">Email</li>'+
+										'<li data-theme="c" onclick="window.open(\'mailto:'+item.email+'?body=Hey Buddy, how are doing today?\');">'+item.email+'</li>'+
+										'<li data-role="list-divider">Website</li>'+
+										'<li data-theme="c" onclick="window.open(\''+item.website+'\');">'+item.website+'</li>'+
+									'</ul>'+
+									'<p align="justify"><strong>Address :</strong><hr>'+item.address+'</p>'+
+									'<p align="justify"><strong>About Us :</strong><hr>'+item.usp+'</p>'+
+                                '</div>'+
                             '</div>'+
                             '<div data-role="footer" data-position="fixed">'+
                             '	<h4>&copy; HETU</h4>'+
