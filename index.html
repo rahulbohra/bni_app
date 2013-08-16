@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
 		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-        <title>BNI Super - Acheivers</title>
+        <title>Super - Acheivers</title>
         <link href="css/jquery.mobile.theme-1.3.2.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/jquery.mobile.structure-1.3.2.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -15,14 +15,52 @@
         <style>
 			body {
 				font-size:14px;
-			}		
+			}
+			
+			.border {
+				border-style:solid;
+				border-color:#fff;
+				border-width:2px;
+			}
+			
+			.button {
+				width:150px;
+			}
 		</style>
     </head> 
     <body>
         <div data-role="page" id="page">
+            <div data-role="panel" id="panel" data-position="right">
+                <div data-role="header" data-theme="a">
+                	<a href="#my-header" data-rel="close" data-theme="d"><i class="icon-reply"></i>&nbsp;</a>
+                    <h1>Hetu</h1>
+                </div>
+                <div data-role="content">
+                    <h3>About BNI :</h3><hr>
+                    <p>BNI Super Achievers is a group of Dynamic Entrepreneurs, who meet every week to discuss business opportunities with each other and exchange referrals.</p>
+                    <h3>About HETU :</h3><hr>
+                    <p>We are a Software Development company having expertise in Web Application Development, Mobile Application Development & Corporate Video Production.</p>
+                    
+                    <div class="ui-grid-solo">
+                        <button type="button"  data-corners="false" onclick="window.open('mailto:we@hetu.me');" data-role="button"><i class="icon-envelope-alt"></i> &nbsp;we@hetu.me</button>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <button type="button" data-corners="false" onclick="window.open('http://www.hetuinfotech.com');" data-role="button"><i class="icon-globe"></i> &nbsp;hetu.me</button>
+                    </div>
+
+                    <div align="center">
+                        <a href="#" onclick="window.open('http://facebook.com/hetuworldwide', '_system');" data-mini="true" data-role="button" data-inline="true"><i class="icon-facebook-sign icon-2x"></i> </a>
+                        <a href="#" onclick="window.open('https://twitter.com/HelloHETU', '_system');" data-mini="true" data-role="button" data-inline="true"><i class="icon-twitter-sign icon-2x"></i> </a>
+                        <a href="#" onclick="window.open('http://pinterest.com/hetuinfotech', '_system');" data-mini="true" data-role="button" data-inline="true"><i class="icon-pinterest-sign icon-2x"></i> </a>
+                        <a href="#" onclick="window.open('http://www.linkedin.com/companies/2077482', '_system');" data-mini="true" data-role="button" data-inline="true"><i class="icon-linkedin-sign icon-2x"></i> </a>
+                        <a href="#" onclick="window.open('http://www.youtube.com/hetume', '_system');" data-mini="true" data-role="button" data-inline="true"><i class="icon-youtube-sign icon-2x"></i> </a>
+                    </div>
+                </div>
+            </div>
+
             <div data-position="fixed" data-role="header" data-theme="a">
-                <h1>BNI Super Acheivers</h1>
-                <a href="#hetuInfo" data-icon="info" class="ui-btn-right" data-rel="dialog" data-transition="flip" data-theme="d">Info</a>
+                <h1>Super Acheivers</h1>
+				<a href="#panel" class="ui-btn-right" data-theme="d"><i class="icon-info"></i></a>
             </div>
             <div data-role="content">
                 <ul id="membersList" data-role="listview" data-autodividers="true" data-filter="true" data-inset="true"></ul>		
@@ -45,31 +83,43 @@
                 
                 // For list pages
                 var html = '<div id="page'+item.id+'" data-role="page" data-theme="b">'+
-                            '<div data-role="header"><a href="#page" data-icon="back" data-transition="slide" data-direction="reverse" data-theme="d" class="ui-btn-left">Back</a>'+
+                            '<div data-role="header"><a href="#page" data-transition="slide" data-direction="reverse" data-theme="d" class="ui-btn-left"><i class="icon-chevron-left"></i>&nbsp;</a>'+
                                 '<h1>'+item.firstName+' '+item.lastName+'</h1>'+
-                                '<a href="#hetuInfo" data-icon="info" class="ui-btn-right" data-rel="dialog" data-transition="flip" data-theme="d">Info</a>'+
+                                '<a href="#panel" class="ui-btn-right" data-theme="d"><i class="icon-info"></i></a>'+
                             '</div>'+
                             '<div data-role="content">'+
                                 '<div style="height:110px;">'+
                                     '<div>'+
-										'<img src="./images/thumbs/'+item.firstName+'_'+item.lastName+'.jpg" style="width:100px; height:100px; padding-bottom:10px; padding-right:10px; float:left;"><br>'+
-										'<b style="font-size:18px;">'+item.company+'</b>'+
-										'<br>'+item.category+'<br><br>'+
+										'<img src="./images/thumbs/'+item.firstName+'_'+item.lastName+'.jpg" class="border" style="width:100px; height:100px; float:left;"><br>'+
+										'<b style="font-size:18px; padding-left:20px">'+item.company+'</b>'+
+										'<br><b style="padding-left:20px; font-weight:normal">'+item.category+'</b><br><br>'+
                                     '</div>'+
+                                '</div>'+
+
+								'<div class="ui-grid-a">'+
+									'<div class="ui-block-a">'+
+										'<button type="button" data-theme="c" data-corners="false" onclick="window.open(\'tel:'+item.cellPhone+'\');"><i class="icon-phone"></i> &nbsp;Call</button>'+
+    	                            '</div>'+
+	                                '<div class="ui-block-b">'+
+										'<button type="button" data-theme="c" data-corners="false" onclick="window.open(\'tel:'+item.cellPhone+'?body=Hey Buddy, how are doing today\');"><i class="icon-comments-alt"></i> &nbsp;Message</button>'+
+    	                            '</div>'+
+								'</div>'+
+
+								'<div class="ui-grid-a">'+
+	                                '<div class="ui-block-a">'+
+										'<button type="button" data-theme="c" data-corners="false" onclick="window.open(\'mailto:'+item.email+'?body=Hey Buddy, how are doing today?\');"><i class="icon-envelope-alt"></i> &nbsp;Email</button>'+
+    	                            '</div>'+
+	                                '<div class="ui-block-b">'+
+										'<button type="button" data-theme="c" data-corners="false" onclick="window.open(\''+item.website+'\');"><i class="icon-cloud"></i> &nbsp;Website</button>'+
+    	                            '</div>'+
                                 '</div>'+
 								'<div>'+
 									'<ul data-role="listview" data-inset="true" data-divider-theme="b">'+
-										'<li data-role="list-divider">Call</li>'+
-										'<li data-theme="c" onclick="window.open(\'tel:'+item.cellPhone+'\');">'+item.cellPhone+'</li>'+
-										'<li data-role="list-divider">SMS</li>'+
-										'<li data-theme="c" onclick="window.open(\'sms:'+item.cellPhone+'?body=Hey Buddy, how are doing today\');">'+item.cellPhone+'</li>'+
-										'<li data-role="list-divider">Email</li>'+
-										'<li data-theme="c" onclick="window.open(\'mailto:'+item.email+'?body=Hey Buddy, how are doing today?\');">'+item.email+'</li>'+
-										'<li data-role="list-divider">Website</li>'+
-										'<li data-theme="c" onclick="window.open(\''+item.website+'\');">'+item.website+'</li>'+
+										'<li data-role="list-divider">Address</li>'+
+										'<li data-theme="c">'+item.address+'</li>'+
+										'<li data-role="list-divider">About Us</li>'+
+										'<li data-theme="c">'+item.usp+'</li>'+
 									'</ul>'+
-									'<p align="justify"><strong>Address :</strong><hr>'+item.address+'</p>'+
-									'<p align="justify"><strong>About Us :</strong><hr>'+item.usp+'</p>'+
                                 '</div>'+
                             '</div>'+
                             '<div data-role="footer" data-position="fixed">'+
@@ -79,27 +129,5 @@
                 $('body').append(html)
             });
         </script>
-        <div data-role="dialog" id="hetuInfo">
-            <div data-role="header" data-theme="d">
-                <h1>Hetu Infotech</h1>
-            </div>
-            <div data-role="content">
-                <h1>About BNI :</h1>
-                <p align="justify">BNI Super Achievers is a group of Dynamic Entrepreneurs, who meet every week to discuss business opportunities with each other and exchange referrals.</p>
-                <h1>About HETU :</h1>
-                <p align="justify">We are a Software Development company having expertise in Web Application Development, Mobile Application Development & Corporate Video Production.</p>
-                <div data-role="controlgroup" data-type="horizontal" align="center">
-                    <a href="mailto:we@hetu.me" data-role="button" data-inline="true"><i class="icon-envelope-alt"></i> we@hetu.me</a>
-                    <a href="http://www.hetuinfotech.com" data-role="button" data-inline="true"><i class="icon-globe"></i> www.hetuinfotech.com</a>
-                </div>
-                <div data-role="controlgroup" data-type="horizontal" align="center">
-                    <a href="#" onclick="window.open('http://facebook.com/hetuworldwide', '_system');" data-role="button" data-inline="true"><i class="icon-facebook-sign icon-2x"></i> </a>
-                    <a href="#" onclick="window.open('https://twitter.com/HelloHETU', '_system');" data-role="button" data-inline="true"><i class="icon-twitter-sign icon-2x"></i> </a>
-                    <a href="#" onclick="window.open('http://pinterest.com/hetuinfotech', '_system');" data-role="button" data-inline="true"><i class="icon-pinterest-sign icon-2x"></i> </a>
-                    <a href="#" onclick="window.open('http://www.linkedin.com/companies/2077482', '_system');" data-role="button" data-inline="true"><i class="icon-linkedin-sign icon-2x"></i> </a>
-                    <a href="#" onclick="window.open('http://www.youtube.com/hetume', '_system');" data-role="button" data-inline="true"><i class="icon-youtube-sign icon-2x"></i> </a>
-                </div>
-            </div>
-        </div>
     </body>
 </html>
