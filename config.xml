@@ -13,7 +13,7 @@
         Hetu Infotech
     </author>
 	
-	<icon src="images/icon.png" gap:role="default" />
+	<icon src="images/icon.jpg" gap:role="default" />
 	
 	<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
 	<access origin="*" browserOnly="true" />
