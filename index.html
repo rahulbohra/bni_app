@@ -36,16 +36,16 @@
                     <h1>Hetu</h1>
                 </div>
                 <div data-role="content">
-                    <h3>About BNI :</h3><hr>
-                    <p>BNI Super Achievers is a group of Dynamic Entrepreneurs, who meet every week to discuss business opportunities with each other and exchange referrals.</p>
+                    <h3>About us :</h3><hr>
+                    <p align="justify">Super Achievers is a group of Dynamic Entrepreneurs, who meet every week to discuss business opportunities with each other & exchange referrals.</p>
                     <h3>About HETU :</h3><hr>
-                    <p>We are a Software Development company having expertise in Web Application Development, Mobile Application Development & Corporate Video Production.</p>
+                    <p align="justify">We are a Software Development company having expertise in Web Application Development, Mobile Application Development & Corporate Video Production.</p>
                     
                     <div class="ui-grid-solo">
                         <button type="button"  data-corners="false" onclick="window.open('mailto:we@hetu.me');" data-role="button"><i class="icon-envelope-alt"></i> &nbsp;we@hetu.me</button>
                     </div>
                     <div class="ui-grid-solo">
-                        <button type="button" data-corners="false" onclick="window.open('http://www.hetuinfotech.com');" data-role="button"><i class="icon-globe"></i> &nbsp;hetu.me</button>
+                        <button type="button" data-corners="false" onclick="window.open('http://www.hetuinfotech.com');" data-role="button"><i class="icon-globe"></i> &nbsp;www.hetu.me</button>
                     </div>
 
                     <div align="center">
@@ -63,13 +63,14 @@
 				<a href="#panel" class="ui-btn-right" data-theme="d"><i class="icon-info"></i></a>
             </div>
             <div data-role="content">
-                <ul id="membersList" data-role="listview" data-autodividers="true" data-divider-theme="a" data-filter="true" data-inset="true"></ul>		
+                <ul id="membersList" data-filter-placeholder="Search a Super Acheivers ...." data-role="listview" data-autodividers="true" data-divider-theme="a" data-filter="true" data-inset="true"></ul>		
             </div>
             <div data-role="footer" data-position="fixed">
 	            <h4>&copy; HETU</h4>
             </div>
         </div>
 		<script type="text/javascript">
+			$.mobile.buttonMarkup.hoverDelay = 0;
             $.each(sortedMembers, function(i, item) {
                 
                 // For list items
